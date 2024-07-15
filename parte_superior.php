@@ -4,9 +4,6 @@
 <head>
     <meta chartset="utf-8">
     <meta name="Proyecto de Tercera 1" content="Página de F1">
-    <title>
-        F1 Inicio
-    </title>
     <link rel="stylesheet" href="./styles/main.css">
 </head>
 
@@ -15,8 +12,10 @@
         <a href="./index.php">
             <img src="./images/menu.png" alt="">
         </a>
-        <p class="texto-menu-izquierda">
-            Formula 1
-        </p>
+    </div>
+    <div class="menu-derecha">
+    <a class="enlaces-menu-derecha" href="https://f1tv.formula1.com/page/8192/2024-season" target="_blank">Temporada 2024</a>
+    <a class="enlaces-menu-derecha" href="https://tickets.formula1.com/es/f1-3286-belgica?_gl=1*19zfo96*_up*MQ..&gclid=EAIaIQobChMIx-GTg56ghwMVo6BaBR0X1wDwEAAYASAAEgKuSPD_BwE" target="_blank">Boletos</a>
     </div>
 </menu>
+
