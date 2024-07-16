@@ -1,7 +1,7 @@
 <?php require_once "./parte_superior.php" ?>
 
 <div class="titulo">
-<p>Conceptos básicos para entender F1 si eres nuevo en el deporte</p>
+    <p>CONCEPTOS PARA ENTENDER F1 SI ERES NUEVO EN EL DEPORTE</p>
 </div>
 
 <body>
