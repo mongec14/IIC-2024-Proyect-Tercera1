@@ -1,88 +1,109 @@
+/* Reseteo de márgenes y rellenos, y ajuste del box-sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Estilo general del cuerpo de la página */
 body {
     overflow-x: hidden;
-    background-color: black;
+    background-color: rgb(21, 20, 20);
 }
 
-menu {
+/* Estilo del contenedor de navegación */
+nav {
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 200px;
-    margin-top: 50px;
+    height: 80px; /* Ajustado para un tamaño de navegación más compacto */
+    margin-top: 0; /* Eliminado margen superior */
+    position: fixed; /* Fijo en la parte superior */
+    top: 0;
+    left: 0;
+    background-color: rgb(237, 230, 230); /* Fondo claro para la navegación */
+    z-index: 1000; /* Asegura que el menú se muestre encima del contenido */
 }
 
+/* Estilo del menú de la izquierda */
 .menu-izquierda {
-    background-color: black;
-    width: 50%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding-left: 20px;
+    padding-left: 20px; /* Ajusta el ancho según sea necesario */
+    width: 200px; /* Ejemplo de ancho fijo, ajusta según tus necesidades */
+    background-color: #ec431d; /* Color temático de Fórmula 1 */
 }
 
+/* Estilo de la imagen en el menú izquierdo */
 .menu-izquierda img {
-    width: 230px;
+    width: 85%; /* La imagen ocupará todo el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
 }
 
+/* Estilo del menú derecho */
 .menu-container {
-    width: 50%;
-    height: 100%;
     display: flex;
+    align-items: center;
     justify-content: flex-end;
+    flex: 1; /* Ocupa el espacio disponible */
 }
 
+/* Contenedor de los enlaces */
 .menu-derecha {
-    background-color: black;
-    width: 100%; 
+    background-color: #ec431d; /* Color temático de Fórmula 1 */
     display: flex;
     align-items: center;
     justify-content: flex-end;
     height: 100%;
-    flex-direction: row;
-    padding-right: 300px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
 }
 
+/* Estilo de los enlaces en el menú derecho */
 .enlaces-menu-derecha {
-    width: 40%;
     text-decoration: none;
-    font-family: "Titillium Web";
-    font-size: 16px;
+    font-family: 'Poppins', sans-serif; /* Fuente moderna */
+    font-size: 14px; /* Tamaño de fuente ajustado para visibilidad */
     font-weight: 500;
     text-transform: uppercase;
-    color: #fff !important;
-    padding: 0px 5px 0px 5px;
-    
-}
-.enlaces-menu-derecha:hover {
-    color: red !important;
+    color: #fff;
+    padding: 0 10px;
+    margin-left: 20px; /* Espacio razonable entre enlaces */
+    position: relative;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
+.enlaces-menu-derecha:hover {
+    color: #ff0000; /* Rojo al pasar el ratón */
+    background-color: #333; /* Fondo oscuro al pasar el ratón */
+}
+
+/* Estilo del título principal */
 .titulo {
     width: 100%;
-    height: 100px;
+    height: auto; /* Ajusta automáticamente según el contenido */
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 10px;
-    padding-bottom: 50px;
+    padding-top: 100px; /* Espacio para el menú fijo */
+    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 
+/* Estilo del texto dentro del título principal */
 .titulo p {
-    width: 70%;
+    width: 40%;
     text-align: center;
-    color: #fff;
+    color: #e6e6e6;
     text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.3);
-    font-family: "Titillium Web";
-    font-size: 36px;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 30px;
     font-weight: 700;
 }
 
+/* Estilo de la imagen principal */
 .main-img {
     display: flex;
     align-items: center;
@@ -94,19 +115,67 @@ menu {
     width: 1140px;
 }
 
+/* Estilo del contenedor del acordeón */
+.main-accordion-container {
+    width: 100%;
+    color: #e6e6e6;
+}
+
+/* Estilo para el título de la sección de preguntas frecuentes */
+.faq-title {
+    width: 100%;
+    text-align: center;
+    margin: 40px 0; /* Espacio alrededor del título */
+}
+
+.faq-title h2 {
+    color: #e6e6e6;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.faq-title p {
+    color: #ddd;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 800px; /* Ancho máximo para el texto */
+    margin: 0 auto; /* Centra el texto */
+}
+
+/* Estilos para el acordeón */
+.accordion-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #222; /* Corregido el color de fondo */
+}
+
+.accordion-title {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #444;
+    color: #e6e6e6;
+}
+
+.accordion-desc {
+    display: none;
+    padding: 10px;
+    background-color: #555;
+}
+
+.tab-active .accordion-desc {
+    display: block;
+}
+
+/* Media Queries para pantallas pequeñas */
 @media (max-width: 1025px) {
-
-    .menu-container {
-        width: 50%;
-        height: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: flex-start;
-    }
-
     .menu-derecha {
-        display: none;
+        opacity: 0; /* Oculta el menú derecho inicialmente */
+        transform: translateY(-10px); /* Mueve el menú fuera de la vista */
+        visibility: hidden; /* Asegura que el menú no sea visible */
     }
 
     .hamburger-icon {
@@ -116,27 +185,31 @@ menu {
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        margin-left: 15px;
-        margin-top: 15px;
-        margin-left: 20px;
+        margin: 15px;
         border: 1px solid white;
         border-radius: 5px;
-
+        cursor: pointer; /* Añadido para mejorar la experiencia del usuario */
+        background-color: #000; /* Fondo negro para el icono */
     }
 
-    span {
+    .hamburger-icon span {
         width: 50px;
         height: 6px;
         background-color: #fff;
         display: block;
         border-radius: 3px;
+        transition: background-color 0.3s ease-in-out;
     }
 
-    .menu-open .menu-derecha {
-        z-index: -2;
-        width: auto;
-        height: auto;
-        display: flex;
+    .hamburger-icon:hover span {
+        background-color: #ff0000; /* Rojo al pasar el ratón */
+    }
+
+    .menu-container.menu-open .menu-derecha {
+        opacity: 1; /* Muestra el menú cuando está abierto */
+        transform: translateY(0); /* Mueve el menú a su posición */
+        visibility: visible; /* Asegura que el menú sea visible */
+        display: flex; /* Muestra el menú como flexbox */
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -145,13 +218,12 @@ menu {
         border-radius: 15px;
         font-size: 50px;
         padding: 10px 20px;
-        
     }
-    
+
     .enlaces-menu-derecha {
         width: 100%;
         text-align: center;
-        padding: 5px 0 5px 0;
+        padding: 5px 0;
+        margin: 0;
     }
 }
-    
