@@ -6,11 +6,20 @@ console.log("Hamburger Icon Cargado");
             this.eventhandlers();
         },
         eventhandlers: function () {
-            document.querySelector('.hamburger-icon').addEventListener('click', function () {
-                document.querySelector('.menu-container').classList.toggle('menu-open');
-            });
+            const hamburgerIcon = document.querySelector('.hamburger-icon');
+            const menuContainer = document.querySelector('.menu-container');
+
+            if (hamburgerIcon && menuContainer) {
+                hamburgerIcon.addEventListener('click', function () {
+                    console.log('Hamburger icon clicked');
+                    menuContainer.classList.toggle('menu-open');
+                });
+            } else {
+                console.error('No se encontraron los elementos necesarios para el menú hamburguesa.');
+            }
         }
     };
 
     MAIN_OBJ.init();
 })();
+

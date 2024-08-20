@@ -9,6 +9,7 @@
 body {
     overflow-x: hidden;
     background-color: rgb(21, 20, 20);
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Estilo del contenedor de navegación */
@@ -16,13 +17,17 @@ nav {
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 80px; /* Ajustado para un tamaño de navegación más compacto */
-    margin-top: 0; /* Eliminado margen superior */
-    position: fixed; /* Fijo en la parte superior */
+    height: 80px;
+    margin-top: 0;
+    position: fixed;
     top: 0;
     left: 0;
-    background-color: rgb(237, 230, 230); /* Fondo claro para la navegación */
-    z-index: 1000; /* Asegura que el menú se muestre encima del contenido */
+    background-color: rgb(222, 40, 40);
+    z-index: 1000;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-bottom: 3px solid rgb(222, 40, 40);
 }
 
 /* Estilo del menú de la izquierda */
@@ -30,77 +35,93 @@ nav {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding-left: 20px; /* Ajusta el ancho según sea necesario */
-    width: 200px; /* Ejemplo de ancho fijo, ajusta según tus necesidades */
-    background-color: #ec431d; /* Color temático de Fórmula 1 */
+    padding-left: 20px;
+    width: 200px;
+    background-color: rgb(222, 40, 40);
 }
 
 /* Estilo de la imagen en el menú izquierdo */
 .menu-izquierda img {
-    width: 85%; /* La imagen ocupará todo el ancho del contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
+    width: 85%;
+    height: auto;
 }
 
-/* Estilo del menú derecho */
+/* Estilo del contenedor del menú */
 .menu-container {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    flex: 1; /* Ocupa el espacio disponible */
+    flex: 1;
 }
 
 /* Contenedor de los enlaces */
 .menu-derecha {
-    background-color: #ec431d; /* Color temático de Fórmula 1 */
+    background-color: rgb(222, 40, 40);
     display: flex;
     align-items: center;
     justify-content: flex-end;
     height: 100%;
     padding-right: 20px;
     box-sizing: border-box;
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease, max-height 0.3s ease;
 }
 
 /* Estilo de los enlaces en el menú derecho */
 .enlaces-menu-derecha {
     text-decoration: none;
-    font-family: 'Poppins', sans-serif; /* Fuente moderna */
-    font-size: 14px; /* Tamaño de fuente ajustado para visibilidad */
+    font-size: 14px;
     font-weight: 500;
     text-transform: uppercase;
     color: #fff;
-    padding: 0 10px;
-    margin-left: 20px; /* Espacio razonable entre enlaces */
-    position: relative;
-    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    padding: 0 15px;
+    margin-left: 20px;
+    border-radius: 5px;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .enlaces-menu-derecha:hover {
-    color: #ff0000; /* Rojo al pasar el ratón */
-    background-color: #333; /* Fondo oscuro al pasar el ratón */
+    color: rgb(222, 40, 40);
+    background-color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Estilo del título principal */
 .titulo {
     width: 100%;
-    height: auto; /* Ajusta automáticamente según el contenido */
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 100px; /* Espacio para el menú fijo */
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+    padding: 100px 20px 40px;
 }
 
-/* Estilo del texto dentro del título principal */
+/* Estilo para el texto del título dentro del contenedor .titulo */
 .titulo p {
-    width: 40%;
+    width: auto;
+    max-width: 800px;
     text-align: center;
-    color: #e6e6e6;
-    text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.3);
-    font-family: 'Titillium Web', sans-serif;
-    font-size: 30px;
+    color: #fff;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+    font-size: 36px;
     font-weight: 700;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: inline-block;
+}
+
+/* Línea decorativa y efecto adicional debajo del texto */
+.titulo p::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    width: 60%;
+    height: 4px;
+    /* Altura de la línea decorativa */
+    background: linear-gradient(90deg, #f76c6c, #ff7f7f);
+    border-radius: 2px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    transform: translateX(-50%);
 }
 
 /* Estilo de la imagen principal */
@@ -119,105 +140,174 @@ nav {
 .main-accordion-container {
     width: 100%;
     color: #e6e6e6;
+    background-color: #333;
+    border-radius: 10px;
+    padding: 20px;
 }
 
 /* Estilo para el título de la sección de preguntas frecuentes */
 .faq-title {
     width: 100%;
     text-align: center;
-    margin: 40px 0; /* Espacio alrededor del título */
+    margin: 60px 0;
 }
 
+/* Estilo para el título principal dentro de la sección de preguntas frecuentes */
 .faq-title h2 {
-    color: #e6e6e6;
-    font-family: 'Titillium Web', sans-serif;
-    font-size: 24px;
+    color: #f5f5f5;
+    font-size: 32px;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
 }
 
+/* Línea decorativa debajo del título */
+.faq-title h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #f76c6c, #ff7f7f);
+    border-radius: 2px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo para el párrafo debajo del título */
 .faq-title p {
     color: #ddd;
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    max-width: 800px; /* Ancho máximo para el texto */
-    margin: 0 auto; /* Centra el texto */
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* Estilos para el acordeón */
 .accordion-item {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    background-color: #222; /* Corregido el color de fondo */
+    border: 1px solid #444;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background: #1c1c1c;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
+/* Estilo del título del acordeón */
 .accordion-title {
-    padding: 10px;
+    padding: 20px;
     cursor: pointer;
-    background-color: #444;
-    color: #e6e6e6;
+    background-color: #2b2b2b;
+    color: #f5f5f5;
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: 1px solid #555;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
+/* Efecto hover para el título del acordeón */
+.accordion-title:hover {
+    background-color: #3b3b3b;
+    color: #fff;
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* Estilo del contenido del acordeón */
 .accordion-desc {
-    display: none;
-    padding: 10px;
-    background-color: #555;
+    padding: 20px;
+    background-color: #2b2b2b;
+    color: #e0e0e0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    border-top: 3px solid rgba(255, 0, 0, 0.3);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
+/* Mostrar el contenido del acordeón cuando está activo */
 .tab-active .accordion-desc {
-    display: block;
+    max-height: 1000px;
+    opacity: 1;
 }
 
 /* Media Queries para pantallas pequeñas */
 @media (max-width: 1025px) {
     .menu-derecha {
-        opacity: 0; /* Oculta el menú derecho inicialmente */
-        transform: translateY(-10px); /* Mueve el menú fuera de la vista */
-        visibility: hidden; /* Asegura que el menú no sea visible */
+        opacity: 0;
+        transform: translateY(-10px);
+        visibility: hidden;
+        position: absolute;
+        top: 80px;
+        right: 5px;
+        background-color: rgb(222, 40, 40);
+        width: 150px;
+        max-height: 0;
+        overflow: hidden;
+        border: 2px solid white;
+        border-radius: 15px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+        flex-direction: column;
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease, max-height 0.3s ease;
     }
 
     .hamburger-icon {
+        display: flex;
         width: 55px;
         height: 50px;
-        display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
         margin: 15px;
-        border: 1px solid white;
+        border: 1px solid rgb(235, 232, 232);
         border-radius: 5px;
-        cursor: pointer; /* Añadido para mejorar la experiencia del usuario */
-        background-color: #000; /* Fondo negro para el icono */
+        cursor: pointer;
+        background-color: #000;
     }
 
     .hamburger-icon span {
         width: 50px;
         height: 6px;
-        background-color: #fff;
-        display: block;
+        background-color: #ebebeb;
         border-radius: 3px;
-        transition: background-color 0.3s ease-in-out;
+        transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
     }
 
     .hamburger-icon:hover span {
-        background-color: #ff0000; /* Rojo al pasar el ratón */
+        background-color: #ff0000;
+        transform: rotate(15deg);
     }
 
     .menu-container.menu-open .menu-derecha {
-        opacity: 1; /* Muestra el menú cuando está abierto */
-        transform: translateY(0); /* Mueve el menú a su posición */
-        visibility: visible; /* Asegura que el menú sea visible */
-        display: flex; /* Muestra el menú como flexbox */
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: rgb(240, 229, 229);
+        background-color: rgb(222, 40, 40);
+        font-size: 18px;
+        padding: 10px 0;
+        width: 150px;
+        max-height: 300px;
+        position: absolute;
+        top: 80px;
+        right: 5px;
         border: 2px solid white;
         border-radius: 15px;
-        font-size: 50px;
-        padding: 10px 20px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease, max-height 0.3s ease;
     }
 
     .enlaces-menu-derecha {
@@ -225,5 +315,211 @@ nav {
         text-align: center;
         padding: 5px 0;
         margin: 0;
+        box-sizing: border-box;
+    }
+}
+
+/* Estilo para el título de las cards */
+.cards-title {
+    width: 100%;
+    text-align: center;
+    color: #f5f5f5;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 50px 0;
+    padding-bottom: 10px;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Subrayado estilizado para el título */
+.cards-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #f76c6c, #ff7f7f);
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedor de las Cards */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 30px;
+    gap: 20px;
+}
+
+/* Estilo general para una card */
+.card {
+    position: relative;
+    background-color: #1a1a1a;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    width: calc(33.333% - 20px);
+    height: 320px;
+    text-align: center;
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border 0.3s ease;
+    border: 2px solid transparent;
+    background: linear-gradient(135deg, #1a1a1a, #2b2b2b);
+}
+
+/* Agrega una viñeta roja en círculo antes del título */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    transition: transform 0.3s ease;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        background-color: red;
+    }
+    50% {
+        background-color: #ff4c4c;
+    }
+    100% {
+        background-color: red;
+    }
+}
+
+/* Estilo para el header de la card */
+.card-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(51, 51, 51, 0.8);
+    color: #fff;
+    padding: 12px 20px;
+    border-bottom: 4px solid red;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    box-shadow: inset 0 1px 6px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    box-sizing: border-box;
+    padding-left: 60px;
+    height: 60px;
+    z-index: 2;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    transform: translateY(0);
+}
+
+.card:hover .card-header {
+    transform: translateY(-5px);
+}
+
+/* Estilo para la imagen dentro de la card */
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 4px solid #333;
+    margin-top: 60px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+/* Estilo para el contenido dentro de la card */
+.card-content {
+    padding: 20px;
+    color: #ddd;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: -4px;
+    text-align: left;
+    transition: color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+/* Estilo para el texto destacado */
+.highlight-text {
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* Efecto hover para la card */
+.card:hover {
+    transform: scale(1.05) rotate(0.5deg);
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+    border-color: red;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+}
+
+/* Efecto hover para la viñeta */
+.card:hover::before {
+    transform: scale(1.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Efecto foco para la card */
+.card:focus {
+    outline: 3px dashed red;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+}
+
+/* Media Queries para pantallas pequeñas y móviles */
+@media (max-width: 768px) {
+    .card {
+        width: calc(50% - 20px);
+    }
+
+    .card-header {
+        padding: 10px 12px;
+        height: auto;
+        font-size: 14px;
+        padding-left: 50px;
+    }
+
+    .card img {
+        height: 150px;
+        margin-top: 60px;
+    }
+
+    .card-content {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+/* Media Queries para pantallas grandes */
+@media (min-width: 1025px) {
+    .card {
+        width: calc(25% - 20px);
+        height: 360px;
     }
 }
