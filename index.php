@@ -174,6 +174,7 @@
     </div>
 
 </div>
+
 <?php include 'parte_inferior.php'; ?>
 
 </body>
