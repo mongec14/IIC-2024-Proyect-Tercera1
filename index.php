@@ -58,7 +58,7 @@
                 </div>
             </div>
         </div>
-        <img src="./images/mercedes.png" alt="Mercedes-AMG Petronas">
+        <img src="./images/mercedes n.png" alt="Mercedes-AMG Petronas">
     </div>
 
     <!-- Card 3 -->
@@ -128,7 +128,7 @@
                 </div>
             </div>
         </div>
-        <img src="./images/aston-martin.png" alt="Aston Martin">
+        <img src="./images/Aston1.png" alt="Aston Martin">
     </div>
 
     <!-- Card 8 -->
@@ -172,7 +172,9 @@
         </div>
         <img src="./images/haas.png" alt="Haas">
     </div>
+
 </div>
+<?php include 'parte_inferior.php'; ?>
 
 </body>
 

@@ -391,9 +391,11 @@ nav {
     0% {
         background-color: red;
     }
+
     50% {
         background-color: #ff4c4c;
     }
+
     100% {
         background-color: red;
     }
@@ -523,3 +525,159 @@ nav {
         height: 360px;
     }
 }
+
+/* Estilos generales */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Contenedor principal para asegurar que el footer no empuje contenido fuera de la vista */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Asegura que el contenido principal ocupe el espacio disponible y el footer quede al final */
+.main-content {
+    flex: 1;
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: rgb(222, 40, 40);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de iluminación sutil en el fondo */
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./path/to/your/background-image.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+    filter: blur(5px);
+    opacity: 0.8;
+    transform: translateY(0);
+    transition: transform 0.5s ease;
+}
+
+/* Contenido del footer */
+footer .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Tamaño del texto y espaciado en el footer */
+footer p {
+    font-size: 16px;
+    margin: 0;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    transition: color 0.3s ease;
+}
+
+footer p:hover {
+    color: #ffd700;
+}
+
+/* Contenedor de iconos sociales */
+footer .social-icons {
+    margin-top: 20px;
+}
+
+/* Iconos en el footer */
+footer .social-icons a {
+    color: #fff;
+    font-size: 24px;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease, opacity 0.3s ease, text-shadow 0.3s ease, border 0.3s ease;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    padding: 6px;
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+}
+
+footer .social-icons a:hover {
+    color: #ffd700;
+    transform: scale(1.2) translate(3px, -3px);
+    opacity: 1;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+    border: 3px solid #ffd700;
+}
+
+/* Efecto de degradado en el fondo */
+footer::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(0deg, rgba(222, 40, 40, 0.7), rgba(222, 40, 40, 0));
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+    footer {
+        padding: 15px;
+    }
+
+    footer .footer-content {
+        padding: 0 10px;
+    }
+
+    footer p {
+        font-size: 14px;
+    }
+
+    footer .social-icons {
+        margin-top: 15px;
+    }
+
+    footer .social-icons a {
+        font-size: 20px;
+        margin: 0 8px;
+        padding: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 10px;
+    }
+
+    footer .footer-content {
+        padding: 0 5px;
+    }
+
+    footer p {
+        font-size: 12px;
+    }
+
+    footer .social-icons {
+        margin-top: 10px;
+    }
+
+    footer .social-icons a {
+        font-size: 18px;
+        margin: 0 5px;
+        padding: 2px;
+    }
+}
+
