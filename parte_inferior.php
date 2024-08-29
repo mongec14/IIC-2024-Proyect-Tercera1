@@ -20,8 +20,3 @@
     </div>
 </footer>
 
-<!-- Scripts -->
-<script src="./script/hamburger-icon.js"></script>
-
-</body>
-</html>

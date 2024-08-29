@@ -12,7 +12,6 @@
         <!-- Menú Izquierdo -->
         <div class="menu-izquierda">
             <a href="./index.php">
-                <!-- Imagen comentada para no visualizarla -->
                 <img src="./images/menu.png" alt="Logo F1">
             </a>
         </div>
@@ -21,7 +20,7 @@
         <div class="menu-container">
             <!-- Menú Derecho -->
             <div class="menu-derecha">
-                <!-- Enlace para Historia (se abre en una nueva pestaña) -->
+                <!-- Enlace para Historia-->
                 <a class="enlaces-menu-derecha"
                     href="https://www.abc.es/deportes/formula-1/abci-historia-formula-1-202007141357_reportaje.html"
                     target="_blank">Historia</a>
